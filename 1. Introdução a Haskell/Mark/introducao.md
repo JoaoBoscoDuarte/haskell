@@ -1,0 +1,41 @@
+# Características
+- Códigos precisos e declarativos: O programador declara o que ele quer ao invés de escrever um passo-a-passo. Codigos mais compactos
+- Imutabilidade: Não existe a ideia de variável, epanas nomes e declarções e são imutáveis, não mudam.
+- Fuções recursivas: Devido a imutabilidade, não se pode ter estruturas de repetições como laços, portanto, como forma de substituir é usado recursividade.
+- Funções de alta ordem: Funções que usam funções como parâmetros.
+- Tipos polimórficos
+- Avaliação preguiçosa: Resultado só será computado quando necessário
+
+# Compilação 
+- Precisa do GHC
+    - Para compilar: `ghc programa.hs`
+    - Executa: ./programa
+
+- Para rodar e criar arquivos intermediariosi o mesmo que o padrão:
+    - `ghc --make programa.hs`
+
+- Rodar sem gerar executável ou arquivos intermediários:
+    - `runhaskell programa.hs`
+
+
+# Funções 
+A baixo contém aguns contrastes entre a notação matemática e haskell:
+| Aspecto                    | Função matemática (tradicional)                 | Função em Haskell                           |
+|----------------------------|-----------------------------------------------|--------------------------------------------|
+| **Definição**               | f(x) = x² + 1                                 | `f x = x^2 + 1`                             |
+| **Parênteses**              | Usados para aplicação: f(x)                   | O espaço indica aplicação: `f x` equivale a `f(x)` |
+| **Composição**              | (g ∘ f)(x) = g(f(x))                         | `g . f`                                    |
+| **Aplicação**               | f(x)                                         | `f x`                                      |
+| **Imutabilidade**           | Nem sempre garantida                         | Sempre (valores são imutáveis)             |
+| **Tipagem**                 | Implícita                                    | Explícita ou inferida, ex: `f :: Int -> Int` |
+| **Funções de ordem superior** | Raras na notação comum                     | Naturais: `map (\x -> x+1) [1,2,3]`         |
+| **Lambda**                  | Não tem (ou usa λ para funções anônimas)     | `\x -> x + 1`                              |
+| **Currying**                | Não é padrão                                 | Padrão: `f x y = x + y` é `f :: Int -> Int -> Int` |
+| **Recursão**                | Não mostrada na definição direta             | Padrão para iterar: `factorial n = if n==0 then 1 else n * factorial (n-1)` |
+
+
+# Convenção de nomeclatura e layout
+- Padrão camelcase para variáveis 
+- Uma lista de números n é nomeada ns, uma lista de variáveis x se torna xs. Uma lista de listas de caracteres tem o nome css.
+- O layout dos códigos em Haskell é similar ao do Python, em que os blocos lógicos são definidos pela indentação.
+- Comentários em uma linha são demarcados pela sequência --, comentários em múltiplas linhas são demarcados por {- e -}:
