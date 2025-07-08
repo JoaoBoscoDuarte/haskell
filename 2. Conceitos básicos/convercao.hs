@@ -7,6 +7,3 @@ soma inteiro real = fromIntegral inteiro + real -- Usa o fromIntegral para não 
 main = do
   let x = 5 :: Int 
   let y = 3.2 :: Double 
-
-
-
