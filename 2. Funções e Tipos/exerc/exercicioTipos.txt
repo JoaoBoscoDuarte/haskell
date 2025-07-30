@@ -1,0 +1,23 @@
+3) Quais são os tipos da seguinte função: 
+second xs = head (tail xs)
+swap (x,y) = (y,x)
+pair x y = (x,y)
+double x = x*2
+palindrome xs = reverse xs == xs
+twice f x = f (f x)
+
+
+--- Respostas ---
+second :: [a] -> a     -- tail retorna todos os elementos da lista exceto o primeiro [a]
+                       -- head extrai o primeiro elemento da lista resultante a 
+
+swap :: (a, b) -> (b, a)  -- entra dois elementos diferentes e retorna os mesmos em ordem oposta
+
+pair :: a -> b -> (a, b)  -- Entrad dois elementos difernete e retorna ambos em uma tupla
+
+double :: Num a => a -> a -- Entra qualquer tipo numérico e retorna o dobro dele 
+
+palindrome :: Eq a => [a] -> Bool -- Para que possa compara o palíndromo o tipo de dado deve ser Eq
+                                  -- Para tido tipo Eq, entra uma lista do tipo a e retorna um valor lógico (true ou false)
+
+twice :: (a -> a) -> a >          -- a função f a -> a aplica nela mesmo, logo: (a -> a) -> a -> a 
