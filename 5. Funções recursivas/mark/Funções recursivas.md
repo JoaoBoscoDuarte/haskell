@@ -64,6 +64,29 @@ product [2,3,4]
 ## Múltiplos argumentos
 Funções com mais de um argumento também podem ser definidas usando recursão, por exemplo
 
+Compactando (zipping) os elementos de duas listas
+```Haskell
+zip :: [a] → [b] → [(a,b)] -- DEfinindo a assinatura da função 
+zip [] _ = []              -- Usando casamento de padrões: se só tiver uma lista, retorna ela mesma
+zip _ [] = []              -- o mesmo de cima 
+zip (x:xs) (y:ys) = (x,y) : zip xs ys -- resulta em um tupla (x, y) e cria uma nova lista (:) com (x, y) no início 
+-- : pega o elemento (x, y) e cria uma lista com a lista resultado da chamda recursiva zip xs ys 
+```
+
+Remover os primeiros n elementos de uma listas
+```Haskell
+drop :: Int -> [a] -> [a]
+drop 0 xs = xs
+drop _ [] = []
+drop n (_:xs) = drop (n-1) xs
+```
+
+Anexar duas listas
+```haskell
+(++) :: [a] -> [a] -> [a]
+[] ++ ys = ys
+(x:xs) ++ ys = x : (xs + ys)
+```
 
 ## Exemplos
 Função que calcula o tamanho de uma lista utilizando recursão:
